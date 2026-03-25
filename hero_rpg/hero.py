@@ -48,7 +48,27 @@ class Hero:
     # ── Skills ────────────────────────────────────────────────────────────────
         self.skills: set[str] = set()
 
+    # ── Stats ────────────────────────────────────────────────────────────────
+        self.stats: dict[str, int] = {
+            "strength": 10,
+            "dexterity": 10,
+            "intelligence": 10,
+            "defense": 5,
+        }
 
+
+    # ── Kill Counter ────────────────────────────────────────────────────────────────
+        self.kill_counter: Counter[str] = Counter()
+
+
+    # ── Item Registry ────────────────────────────────────────────────────────────────
+        self._item_registry: defaultdict[str, list[Item]] = defaultdict(list)
+
+    
+    # ── Combat Log ────────────────────────────────────────────────────────────────
+        self.combat_log: deque[str] = deque(maxlen=10)
+    
+    
     # ── Health ────────────────────────────────────────────────────────────────
 
     def take_damage(self, amount: int) -> int:
