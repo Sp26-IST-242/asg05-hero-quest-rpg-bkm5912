@@ -38,6 +38,13 @@ class Hero:
         self.max_health: int = max_health
         self.health: int = max_health
 
+    # ── Bag 1: potions, armor, etc ────────────────────────────────────────────────────────────────
+        self.inventory: Bag[Item] = Bag(capacity=20)
+
+    # ── Bag 2: only for weapons ────────────────────────────────────────────────────────────────
+        self.equipped_weapons: Bag[Weapon] = Bag(capacity=3)
+
+
 
     # ── Health ────────────────────────────────────────────────────────────────
 
